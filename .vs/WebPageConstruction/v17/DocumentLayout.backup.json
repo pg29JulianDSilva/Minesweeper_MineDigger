@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\Script.Js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Script.Js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\Index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\libraries\\dificultylib.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:libraries\\dificultylib.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\modules\\dificulty.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\dificulty.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 1001,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "style.css",
+              "DocumentMoniker": "D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\style.css",
+              "RelativeDocumentMoniker": "style.css",
+              "ToolTip": "D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\style.css",
+              "RelativeToolTip": "style.css",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAAAN0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-27T17:15:22.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.html",
+              "DocumentMoniker": "D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\Index.html",
+              "RelativeDocumentMoniker": "Index.html",
+              "ToolTip": "D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\Index.html",
+              "RelativeToolTip": "Index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-27T17:15:20.653Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1723,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dificultylib.js",
+              "DocumentMoniker": "D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\libraries\\dificultylib.js",
+              "RelativeDocumentMoniker": "libraries\\dificultylib.js",
+              "ToolTip": "D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\libraries\\dificultylib.js",
+              "RelativeToolTip": "libraries\\dificultylib.js",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-19T19:06:54.005Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Script.Js",
+              "DocumentMoniker": "D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\Script.Js",
+              "RelativeDocumentMoniker": "Script.Js",
+              "ToolTip": "D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\Script.Js",
+              "RelativeToolTip": "Script.Js",
+              "ViewState": "AgIAANsAAAAAAAAAAAAIwO0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-09-29T00:28:42.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dificulty.js",
+              "DocumentMoniker": "D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\modules\\dificulty.js",
+              "RelativeDocumentMoniker": "modules\\dificulty.js",
+              "ToolTip": "D:\\Projectos VFS\\HTML\\A3\\WebPageConstruction\\modules\\dificulty.js",
+              "RelativeToolTip": "modules\\dificulty.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-19T19:06:20.789Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
