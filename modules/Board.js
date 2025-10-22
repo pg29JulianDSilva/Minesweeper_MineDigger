@@ -15,13 +15,9 @@ class minesweeper {
         this.cells = [];
 
         //restart
-        this.x = [];
-        this.xRepeat = 0;
-        this.states = 0;
-        this.dificulty = [10, 15, 20];
         this.lTimer = 0;
-        this.numies = 0;
-        this.fElements = this.x.length;
+        this.fElements = 0;
+        this.counter = 0;
 
         this.boardEl = this.pGame[this.dChosen];
 
@@ -29,23 +25,8 @@ class minesweeper {
     }
 
     reStart(dChosen) {
-
-        this.numines = Math.floor(Math.random() * ((this.dificulty[this.dChosen] * this.dificulty[this.dChosen]) - (this.dificulty[this.dChosen]))) + this.dificulty[this.dChosen];
-        console.log(this.numines);
-        //mFlags[dChosen].textContent = "0" + this.numines;
-        for (let i = 0; i < this.numines; i++) {
-            do {
-                this.xRepeat = Math.floor(Math.random() * ((this.dificulty[this.dChosen] * this.dificulty[this.dChosen]) - this.numines) + this.numines);
-                if (this.x.includes(this.xRepeat)) {
-                    this.x[i] = this.xRepeat;
-                }
-                //console.log(xRepeat); For testing
-                //console.log(x); For testing
-            } while (this.x.includes(this.xRepeat))
-            this.x.push(this.xRepeat);
-        }
+        this.init();
         this.lTimer = 0;
-        //Timmmmer();
     }
 
     rFlags() {
@@ -75,14 +56,19 @@ class minesweeper {
             cell.dataset.index = index;
             cell.dataset.marked = 0; //This is a boolean dataset, however, I had trouble with the  boolean info, so i changed it into a int
             cell.dataset.digged = 0;//This one also
-            cell.src = "Assets/faceH.png";
 
-            //const cFlag = document.createElement('img');
-            //cFlag.src = "Flag.png";
-            //cFlag.classList.add('iFlag');
-            //cFlag.dataset.index = index;
-            //this.iCell = document.querySelectorAll(".cell")
-            //this.iCell.appendChild(cFlag);
+            cell.dataset.mine = 0;//Other boolean to knwo which spots have mines
+            cell.dataset.mineNumber = 0;//Number of mines near
+
+
+
+            cell.src = "Assets/empty.png";
+
+            if ((Math.floor(Math.random() * 2) == 0)){
+                cell.dataset.mine = 1;//Other boolean to knwo which spots have mines
+                cell.dataset.mineNumber = 0;//Other boolean to knwo which spots have mines
+                this.fElements++;
+            };
 
 
             cell.addEventListener('mousedown', () => this.clickHandle(index)); ///
@@ -93,97 +79,133 @@ class minesweeper {
     };
 
     mineDigger = (index) => {
-        //if()
+        if (this.cells[index].dataset.mine == 1) { return; }
+        this.actualIndex = index;
+        this.cells[index].dataset.digged = 1;
+        if (this.cells[index - 1].dataset.mine == 1 || this.cells[index - 1].dataset.digged == 1) {
+            this.cells[index].dataset.mineNumber++;
+        }else {
+            //this.mineDigger(this.actualIndex - 1);
+        }
+
+        if (this.cells[index + 1].dataset.mine == 1 || this.cells[index + 1].dataset.digged == 1) {
+            this.cells[index].dataset.mineNumber++;
+        } else {
+            //this.mineDigger(this.actualIndex + 1);
+        }
+
+        if (this.cells[this.actualIndex - this.dificulty[this.dChosen]].dataset.mine == 1 || this.cells[this.actualIndex - this.dificulty[this.dChosen]].dataset.digged == 1) {
+            this.cells[index].dataset.mineNumber++;
+        } else {
+            //this.mineDigger(this.actualIndex - this.dificulty[this.dChosen]);
+        }
+
+        if (this.cells[this.actualIndex - this.dificulty[this.dChosen]].dataset.mine == 1 || this.cells[this.actualIndex - this.dificulty[this.dChosen]].dataset.digged == 1) {
+            this.cells[index].dataset.mineNumber++;
+        } else {
+            //this.mineDigger(this.actualIndex + this.dificulty[this.dChosen]);
+        }
+        
+        if (this.cells[index - (this.dificulty[this.dChosen] - 1)].dataset.mine == 1) {
+            this.cells[index].dataset.mineNumber++;
+        } else {
+            //this.mineDigger(this.actualIndex - this.dificulty[this.dChosen] - 1);
+        }
+
+        if (this.cells[index + (this.dificulty[this.dChosen] - 1)].dataset.mine == 1) {
+            this.cells[index].dataset.mineNumber++;
+        } else {
+            //this.mineDigger(this.actualIndex + this.dificulty[this.dChosen] - 1);
+        }
+
+        if (this.cells[index - (this.dificulty[this.dChosen] + 1)].dataset.mine == 1) {
+            this.cells[index].dataset.mineNumber++;
+        } else {
+            //this.mineDigger(this.actualIndex - this.dificulty[this.dChosen] + 1);
+        }
+
+        if (this.cells[index + (this.dificulty[this.dChosen] + 1)].dataset.mine == 1) {
+            this.cells[index].dataset.mineNumber++;
+        } else {
+            //this.mineDigger(this.actualIndex + this.dificulty[this.dChosen] + 1);
+        }
+
+        //switch ((Math.floor(Math.random() * 8))
+
+        //console.log(this.cells[index].dataset.mineNumber);
+        //console.log(index);
+        this.image(index);
+    }
+
+    image = (index) => {
+        
+        if (this.cells[index].dataset.mineNumber == 0) {
+            this.cells[index].src = "Assets/Digged.png";
+            console.log(this.cells[index].dataset.mineNumber);
+        }
+        if (this.cells[index].dataset.mineNumber == 1) {
+            this.cells[index].src = "Assets/1.png";
+        }
+        if (this.cells[index].dataset.mineNumber == 2) {
+            this.cells[index].src = "Assets/2.png";
+        }
+        if (this.cells[index].dataset.mineNumber == 3) {
+            this.cells[index].src = "Assets/3.png";
+        }
+        if (this.cells[index].dataset.mineNumber == 4) {
+            this.cells[index].src = "Assets/4.png";
+        }
+        if (this.cells[index].dataset.mineNumber == 5) {
+            this.cells[index].src = "Assets/5.png";
+        }
+        if (this.cells[index].dataset.mineNumber == 6) {
+            this.cells[index].src = "Assets/6.png";
+        }
+        if (this.cells[index].dataset.mineNumber == 7) {
+            this.cells[index].src = "Assets/7.png";
+        }
+        if (this.cells[index].dataset.mineNumber == 8) {
+            this.cells[index].src = "Assets/8.png";
+        }
+            
     }
 
 
     //Need to fix the cycle
     clickHandle = (index) => {
         //const mButton = clickHandle.button;
-        if (this.isGameOver) return;
+        if (this.isGameOver || this.cells[index].dataset.digged == 1) return;
         this.isMarked = this.cells[index].dataset.marked;
         if (event.button == 2 && (this.isMarked == 0)) {
             this.cells[index].src = "Assets/Flag.png";
             this.cells[index].dataset.marked = 1;
 
-            if (x.includes(index)) {
+            if (this.cells[index].dataset.mine == 1) {
+
                 this.fElements--;
             }
 
         }else if(event.button == 2) {
-            this.cells[index].src = "Assets/faceH.png";
+            this.cells[index].src = "Assets/empty.png";
             this.cells[index].dataset.marked = 0;
         }
 
         if (event.button == 0) {
-            if (x.includes(index)) {
+            if (this.cells[index].dataset.mine == 1) {
+                this.cells[index].src = "Assets/Mine(S).png";
                 this.isGameOver = true;
             } else {
-                this.cells[index].src = "Assets/faceD.png";
-                this.mineDigger(index);
+                this.mineDigger(index)
+                this.image(index);
+                
             }
         }
-        console.log(this.isMarked);
+        //console.log(this.isMarked);
     }
-
-    /*handleFlag = (index) => {
-        if (this.board[index] || this.isGameOver) return;
-    }
-
-    handleMove = (index) => {
-        if (this.board[index] || this.isGameOver) return;
-
-        this.board[index] = this.currentPlayer;
-        if (board[x] == this.currentPlayer) {
-            board[x].style.backgroundImage = "url(D:\Projectos VFS\HTML\A3\WebPageConstruction\Assets\Mine(S).png)";
-
-        }
-        this.cells[index].textContent = this.currentPlayer;
-
-        if (!this.checkMine()) {
-            this.stateEl.textContent = `Player ${this.currentPlayer} wins`;
-            this.isGameOver = true;
-        } else if (this.board.every(cell => cell)) {
-            this.stateEl.textContent = "It's a draw!";
-            this.isGameOver = true;
-        } else {
-            this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
-            this.stateEl.textContent = `Player ${this.currentPlayer}'s turn`
-        };
-    };*/
 
     returnFlags() {
         return this.fElements;
     }
-
-    checkMine = () => {
-
-        for (let i = 0; i < numines; i++) {
-            do {
-                xRepeat = Math.floor(Math.random() * ((dificulty[dChosen] * dificulty[dChosen]) - numines) + numines);
-                if (x.includes(xRepeat)) {
-                    x[i] = xRepeat;
-                }
-                //console.log(xRepeat); For testing
-                //console.log(x); For testing
-            } while (x.includes(xRepeat))
-            x.push(xRepeat);
-            console.log(x);
-        }
-
-
-        const winCombos = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows 
-            [0, 3, 6], [1, 4, 7], [2, 5, 8],  //Columns
-            [0, 4, 8], [2, 4, 6] //Diagonals :)
-        ]
-
-        return winCombos.some(([a, b, c]) => {
-            return this.board[a] &&
-                this.board[a] === this.board[b] &&
-                this.board[a] === this.board[c];
-        });
-    };
 }
 
 export default minesweeper;
