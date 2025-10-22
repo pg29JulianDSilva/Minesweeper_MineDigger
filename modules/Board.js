@@ -1,48 +1,57 @@
 class minesweeper {
-    constructor(Egame, Mgame, Hgame) {
+    constructor(Egame, Mgame, Hgame, dChosen) {
 
-        this.dChosen = 2;
+        this.dChosen = dChosen;
         this.dificulty = [10, 15, 20];
 
         this.pGame = [Egame, Mgame, Hgame];
 
         this.board = Array(((this.dificulty[this.dChosen]) * this.dificulty[this.dChosen])).fill('');
 
-        this.currentPlayer = '0';
-
         this.isGameOver = false;
 
         this.cells = [];
 
         //restart
-        this.lTimer = 0;
+        this.lSeconds = 0;
+        this.lMinutes = 0;
         this.fElements = 0;
         this.counter = 0;
 
         this.boardEl = this.pGame[this.dChosen];
 
+        //Timmer
+
         this.init();
+
+        this.RHappy = document.querySelectorAll('.Happy');
+        this.RDead = document.querySelectorAll('.Dead');
     }
 
-    reStart(dChosen) {
-        this.init();
-        this.lTimer = 0;
+    /*aSeconds = () => {
+        this.lSeconds++;
+        if (this.lSeconds == 60) {
+            this.lMinutes++;
+            this.lSeconds = 0;
+        }
     }
 
-    rFlags() {
-        return this.x;
+    rSeconds() {
+        return this.lSeconds;
+    }
+
+    rMinutes() {
+        return this.lMinutes;
+    }*/
+
+    reStart() {
+        this.init();
+        this.lMinutes = 0;
+        this.lSeconds = 0;
     }
 
     rNumies() {
-        return this.numines;
-    }
-
-    rDificulty() {
-        return ((this.dificulty[this.dChosen] * this.dificulty[this.dChosen]));
-    }
-
-    sDificulty(dNumber){
-        this.dChosen = dNumber;
+        return this.fElements;
     }
 
     init = () => {
@@ -64,7 +73,7 @@ class minesweeper {
 
             cell.src = "Assets/empty.png";
 
-            if ((Math.floor(Math.random() * 2) == 0)){
+            if ((Math.floor(Math.random() * 4) == 0)){
                 cell.dataset.mine = 1;//Other boolean to knwo which spots have mines
                 cell.dataset.mineNumber = 0;//Other boolean to knwo which spots have mines
                 this.fElements++;
@@ -79,66 +88,56 @@ class minesweeper {
     };
 
     mineDigger = (index) => {
-        if (this.cells[index].dataset.mine == 1) { return; }
+        if (this.cells[index].dataset.mine == 1 || this.cells[index].dataset.digged == 1) { return; }
         this.actualIndex = index;
         this.cells[index].dataset.digged = 1;
-        if (this.cells[index - 1].dataset.mine == 1 || this.cells[index - 1].dataset.digged == 1) {
+        if (this.cells[index - 1].dataset.mine == 1) {
             this.cells[index].dataset.mineNumber++;
-        }else {
-            //this.mineDigger(this.actualIndex - 1);
+            console.log(1);
         }
 
-        if (this.cells[index + 1].dataset.mine == 1 || this.cells[index + 1].dataset.digged == 1) {
+        if (this.cells[index + 1].dataset.mine == 1) {
             this.cells[index].dataset.mineNumber++;
-        } else {
-            //this.mineDigger(this.actualIndex + 1);
+            console.log(2);
         }
 
-        if (this.cells[this.actualIndex - this.dificulty[this.dChosen]].dataset.mine == 1 || this.cells[this.actualIndex - this.dificulty[this.dChosen]].dataset.digged == 1) {
+        if (this.cells[this.actualIndex - this.dificulty[this.dChosen]].dataset.mine == 1) {
             this.cells[index].dataset.mineNumber++;
-        } else {
-            //this.mineDigger(this.actualIndex - this.dificulty[this.dChosen]);
-        }
+            console.log(3);
+        } 
 
-        if (this.cells[this.actualIndex - this.dificulty[this.dChosen]].dataset.mine == 1 || this.cells[this.actualIndex - this.dificulty[this.dChosen]].dataset.digged == 1) {
+        if (this.cells[this.actualIndex + this.dificulty[this.dChosen]].dataset.mine == 1) {
             this.cells[index].dataset.mineNumber++;
-        } else {
-            //this.mineDigger(this.actualIndex + this.dificulty[this.dChosen]);
-        }
+            console.log(4);
+        } 
         
         if (this.cells[index - (this.dificulty[this.dChosen] - 1)].dataset.mine == 1) {
             this.cells[index].dataset.mineNumber++;
-        } else {
-            //this.mineDigger(this.actualIndex - this.dificulty[this.dChosen] - 1);
-        }
+            console.log(5);
+        } 
 
         if (this.cells[index + (this.dificulty[this.dChosen] - 1)].dataset.mine == 1) {
             this.cells[index].dataset.mineNumber++;
-        } else {
-            //this.mineDigger(this.actualIndex + this.dificulty[this.dChosen] - 1);
-        }
+            console.log(6);
+        } 
 
         if (this.cells[index - (this.dificulty[this.dChosen] + 1)].dataset.mine == 1) {
             this.cells[index].dataset.mineNumber++;
-        } else {
-            //this.mineDigger(this.actualIndex - this.dificulty[this.dChosen] + 1);
-        }
+            console.log(7);
+        } 
 
         if (this.cells[index + (this.dificulty[this.dChosen] + 1)].dataset.mine == 1) {
             this.cells[index].dataset.mineNumber++;
-        } else {
-            //this.mineDigger(this.actualIndex + this.dificulty[this.dChosen] + 1);
-        }
-
-        //switch ((Math.floor(Math.random() * 8))
+            console.log(8);
+        } 
 
         //console.log(this.cells[index].dataset.mineNumber);
         //console.log(index);
-        this.image(index);
+        //this.image(index);
     }
 
     image = (index) => {
-        
+        if (this.cells[index].dataset.mine == 1) { return; }
         if (this.cells[index].dataset.mineNumber == 0) {
             this.cells[index].src = "Assets/Digged.png";
             console.log(this.cells[index].dataset.mineNumber);
@@ -193,19 +192,42 @@ class minesweeper {
         if (event.button == 0) {
             if (this.cells[index].dataset.mine == 1) {
                 this.cells[index].src = "Assets/Mine(S).png";
+                //this.RHappy[this.dificulty[this.dChosen]].style.display = "none";
+                //this.RDead[this.dificulty[this.dChosen]].style.display = "block";
                 this.isGameOver = true;
             } else {
-                this.mineDigger(index)
+                this.mineDigger(index);
                 this.image(index);
-                
+
+                //I know this can be done with a loop. But the loops are crashing the html, whihc is why I cannot use it.
+                this.mineDigger(index - 1);
+                this.image(index - 1);
+                this.mineDigger(index + 1);
+                this.image(index + 1);
+                this.mineDigger(index - this.dificulty[this.dChosen]);
+                this.image(index - this.dificulty[this.dChosen]);
+                this.mineDigger(index + this.dificulty[this.dChosen]);
+                this.image(index + this.dificulty[this.dChosen]);
+                this.mineDigger(index - (this.dificulty[this.dChosen] - 1));
+                this.image(index - (this.dificulty[this.dChosen] - 1));
+                this.mineDigger(index - (this.dificulty[this.dChosen]+ 1));
+                this.image(index - (this.dificulty[this.dChosen] + 1));
+                this.mineDigger(index + (this.dificulty[this.dChosen] - 1));
+                this.image(index + (this.dificulty[this.dChosen] - 1));
+                this.mineDigger(index + (this.dificulty[this.dChosen] + 1));
+                this.image(index + (this.dificulty[this.dChosen] + 1));
+
             }
+            this.checkwin();
         }
         //console.log(this.isMarked);
     }
 
-    returnFlags() {
-        return this.fElements;
+    checkwin = (index) => {
+
+        return;
     }
+
 }
 
 export default minesweeper;

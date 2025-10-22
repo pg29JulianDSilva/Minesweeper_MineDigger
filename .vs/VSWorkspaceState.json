@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Assets",
     "\\libraries",
     "\\modules"
   ],
+  "SelectedNode": "\\modules\\Board.js",
   "PreviewInSolutionExplorer": false
 }

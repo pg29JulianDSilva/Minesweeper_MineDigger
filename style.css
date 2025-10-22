@@ -75,19 +75,18 @@ ul li{
     background-color: saddlebrown;
 }
 
-/*Levels dificulties: This ones right now doesn't display actual game, only an empty div, where the game will be*/
 
 #Egame {
     padding: 3vw;
-    width: 20vw;
-    height: 25vw;
+    width: 30vw;
+    height: 35vw;
     display: none;
 }
 
 #Mgame {
     padding: 1vw;
-    width: 35vw;
-    height: 40vw;
+    width: 45vw;
+    height: 55vw;
     display: none;
 }
 
@@ -109,15 +108,19 @@ ul li{
 }
 
 #MCave {
-    margin: 2vw;
+    margin: 1vw;
     display: grid;
     grid-template-columns: repeat(15, 6.64%);
+    height: 87%;
+    margin-left: 3vw;
     /*grid-gap: 5px;*/
     justify-content: center;
 }
 #ECave {
     margin: 1vw;
     display: grid;
+    height: 87%;
+    margin-left: 1.5vw;
     grid-template-columns: repeat(10, 10%);
     /*grid-gap: 5px;*/
     justify-content: center;
@@ -125,6 +128,7 @@ ul li{
 #HCave {
     margin: 4vw;
     display: grid;
+    height: 87%;
     grid-template-columns: repeat(20, 5%);
     /*grid-gap: 5px;*/
     justify-content: center;
