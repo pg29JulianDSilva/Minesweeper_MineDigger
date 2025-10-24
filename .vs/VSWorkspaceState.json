@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Assets",
     "\\libraries",
     "\\modules"
   ],
+  "SelectedNode": "\\libraries\\gameLogic.js",
   "PreviewInSolutionExplorer": false
 }
