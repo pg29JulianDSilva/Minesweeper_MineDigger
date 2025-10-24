@@ -10,6 +10,10 @@ class GameEngine {
     setNumies() {
         return this.board.rNumies();
     }
+
+    setGame() {
+        return this.board.checkGame();
+    }
 }
 
 export default GameEngine;

@@ -51,9 +51,6 @@ Ebutton.addEventListener("click", easygame);
 Mbutton.addEventListener("click", mediumgame);
 Hbutton.addEventListener("click", hardgame);
 
-
-
-
 //Actual Minesweeper game
 
 //Elements
@@ -70,9 +67,9 @@ let popup;
 
 //mines
 
-let d = new GameEngine(Egame, Mgame, Hgame, dChosen);
 
 //for the time
+let d = new GameEngine(Egame, Mgame, Hgame, dChosen);
 let lTimer = setInterval(timer, 1000);
 //This one will need later the clearinterval(lTimer)
 let gSeconds = 0;
@@ -84,7 +81,10 @@ function timer(){
         gMinutes++;
         gSeconds = 0;
     }
+    mTime[dChosen].textContent = gMinutes + ":" + gSeconds;
 }
+
+
 
 //Button difficulty functions
 
@@ -92,7 +92,10 @@ function timer(){
 let RestartButton = document.querySelectorAll('.ReStart');
 
 function Redo() {
-    mTime[dChosen].textContent = gMinutes+":"+gSeconds;
+    clearInterval(lTimer);
+    gSeconds = 0;
+    gMinutes = 0;
+    lTimer = setInterval(timer, 1000)
     d = new GameEngine(Egame, Mgame, Hgame, dChosen);
     mFlags[dChosen].textContent = 0 + d.setNumies();
     return;
@@ -117,10 +120,18 @@ let csvFile = fetch("UserData-MineSweeper(Hoja1).csv");
 //Function to start
 
 
-function endgame() {
+
+if (d.setGame() == 1) {
+    clearInterval(lTimer);
+    console.log(d.setGame());
+}
+
+if (d.setGame() == 2) {
+    clearInterval(lTimer);
     popup = document.createElement("div");
     TagName = prompt("Congrats, you won! Please enter your name here:");
 }
+
 
 //Final codes
 
@@ -129,4 +140,6 @@ RestartButton[1].addEventListener("click", Redo);
 RestartButton[2].addEventListener("click", Redo);
 
 Redo();
+
 lTimer;
+
