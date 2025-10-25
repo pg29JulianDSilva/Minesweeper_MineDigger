@@ -22,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "app.Js",
+              "DocumentMoniker": "D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\app.Js",
+              "RelativeDocumentMoniker": "app.Js",
+              "ToolTip": "D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\app.Js",
+              "RelativeToolTip": "app.Js",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAAwIcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-24T04:39:41.564Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -32,9 +45,10 @@
               "RelativeDocumentMoniker": "libraries\\gameLogic.js",
               "ToolTip": "D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\libraries\\gameLogic.js",
               "RelativeToolTip": "libraries\\gameLogic.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAqwAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-10-24T04:39:48.143Z"
+              "WhenOpened": "2025-10-24T04:39:48.143Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -44,22 +58,10 @@
               "RelativeDocumentMoniker": "modules\\Board.js",
               "ToolTip": "D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\modules\\Board.js",
               "RelativeToolTip": "modules\\Board.js",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAQwEwAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAAAGYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-10-24T04:39:46.196Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "app.Js",
-              "DocumentMoniker": "D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\app.Js",
-              "RelativeDocumentMoniker": "app.Js",
-              "ToolTip": "D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\app.Js",
-              "RelativeToolTip": "app.Js",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-10-24T04:39:41.564Z"
             }
           ]
         }

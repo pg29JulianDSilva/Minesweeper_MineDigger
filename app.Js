@@ -63,7 +63,7 @@ let mTime = document.querySelectorAll('.Timer');
 let mFlags = document.querySelectorAll('.Flags');
 
 let TagName;
-let popup;
+//let popup;
 
 //mines
 
@@ -82,6 +82,8 @@ function timer(){
         gSeconds = 0;
     }
     mTime[dChosen].textContent = gMinutes + ":" + gSeconds;
+    checkEndGame();
+
 }
 
 
@@ -114,22 +116,47 @@ function Redo() {
 
 //For the score managing
 
-let csvFile = fetch("UserData-MineSweeper(Hoja1).csv");
+//let csvFile = fetch("UserData-MineSweeper(Hoja1).csv");
 //console.log(csvFile.text);
+
+let pName = [];
+let pTime = [];
+
+let fTime = 0;
+
+pName[0] = document.querySelector('#name_1');
+pName[1] = document.querySelector('#name_2');
+pName[2] = document.querySelector('#name_3');
+pName[3] = document.querySelector('#name_4');
+pName[4] = document.querySelector('#name_5');
+
+pTime[0] = document.querySelector('#time_1');
+pTime[1] = document.querySelector('#time_2');
+pTime[2] = document.querySelector('#time_3');
+pTime[3] = document.querySelector('#time_4');
+pTime[4] = document.querySelector('#time_5');
 
 //Function to start
 
+function checkEndGame() {
 
+    if (d.setGame() == 1) {
+        clearInterval(lTimer);
+    }
 
-if (d.setGame() == 1) {
-    clearInterval(lTimer);
-    console.log(d.setGame());
-}
+    if (d.setGame() == 2) {
+        clearInterval(lTimer);
+        //popup = document.createElement("div");
+        fTime = (gMinutes * 60) + gSeconds;
+        TagName = prompt("Congrats, you won! Please enter your name here:");
 
-if (d.setGame() == 2) {
-    clearInterval(lTimer);
-    popup = document.createElement("div");
-    TagName = prompt("Congrats, you won! Please enter your name here:");
+        for (let i = 0; i < 5; i++) {
+            if ((pTime[i].textContent.slice(0, 1) * 60) + pTime[i].textContent.slice(3,4) > fTime) {
+                pTime[i].textContent = gMinutes + ":" + gSeconds;
+                pName[i].textContent = TagName;
+            }
+        }
+    }
 }
 
 
@@ -142,4 +169,3 @@ RestartButton[2].addEventListener("click", Redo);
 Redo();
 
 lTimer;
-
