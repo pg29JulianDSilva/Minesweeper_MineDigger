@@ -63,10 +63,8 @@ let mTime = document.querySelectorAll('.Timer');
 let mFlags = document.querySelectorAll('.Flags');
 
 let TagName;
-//let popup;
 
-//mines
-
+let mFace = document.querySelectorAll('.Happy');
 
 //for the time
 let d = new GameEngine(Egame, Mgame, Hgame, dChosen);
@@ -100,24 +98,11 @@ function Redo() {
     lTimer = setInterval(timer, 1000)
     d = new GameEngine(Egame, Mgame, Hgame, dChosen);
     mFlags[dChosen].textContent = 0 + d.setNumies();
+    mFace[dChosen].src = "Assets/faceH.png";
     return;
 };
-
-
-
-//Just to check that all is adjusted
-/*for (let i = 0; i < RestartButton.length; i++) {
-    console.log(RestartButton[i]);
-    console.log(RHappy[i]);
-    console.log(RDead[i]);
-    console.log(mTime[i]);
-    console.log(mFlags[i]);
-}*/
-
 //For the score managing
 
-//let csvFile = fetch("UserData-MineSweeper(Hoja1).csv");
-//console.log(csvFile.text);
 
 let pName = [];
 let pTime = [];
@@ -142,24 +127,33 @@ function checkEndGame() {
 
     if (d.setGame() == 1) {
         clearInterval(lTimer);
+        mFace[dChosen].src = "Assets/faceD.png";
     }
 
     if (d.setGame() == 2) {
         clearInterval(lTimer);
-        //popup = document.createElement("div");
         fTime = (gMinutes * 60) + gSeconds;
         TagName = prompt("Congrats, you won! Please enter your name here:");
 
         for (let i = 0; i < 5; i++) {
-            if ((pTime[i].textContent.slice(0, 1) * 60) + pTime[i].textContent.slice(3,4) > fTime) {
+            if (((Number(pTime[i].textContent.slice(0, 1)) * 60) + Number(pTime[i].textContent.slice(2, 3))) > fTime || ((Number(pTime[i].textContent.slice(0, 1)) * 60) + Number(pTime[i].textContent.slice(4, 5))) == 0) {
+                if (i < 4) {
+                    pTime[i + 1].textContent = pTime[i].textContent;
+                    pName[i + 1].textContent = pName[i].textContent;
+                }
                 pTime[i].textContent = gMinutes + ":" + gSeconds;
                 pName[i].textContent = TagName;
+                
             }
         }
+
     }
 }
-
-
+for (let i = 0; i < 5; i++) {
+    (console.log((Number(pTime[i].textContent.slice(0, 1)) * 60) + Number(pTime[i].textContent.slice(2, 3))));
+    console.log(pTime[i].textContent.slice(2, 3));
+    console.log(i);
+}
 //Final codes
 
 RestartButton[0].addEventListener("click", Redo);

@@ -160,10 +160,6 @@ ul li{
     display:block;
 }
 
-.Dead{
-    display:none;
-}
-
 /*Second part: The idea here is to create a rank system, where they can all be display a record inside the different difficulties.*/
 
 #Ranks {
