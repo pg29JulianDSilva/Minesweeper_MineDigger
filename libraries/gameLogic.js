@@ -7,9 +7,13 @@ class GameEngine {
         
     }
 
+    //The called of number of flags
+
     setNumies() {
         return this.board.rNumies();
     }
+
+    //This one return the value form the gamecheck inside the minesweeper class
 
     setGame() {
         return this.board.checkGame();

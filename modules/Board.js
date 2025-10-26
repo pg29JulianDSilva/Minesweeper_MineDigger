@@ -1,6 +1,7 @@
 class minesweeper {
     constructor(Egame, Mgame, Hgame, dChosen) {
 
+        //defaultvalues for the constructor
         this.dChosen = dChosen;
         this.dificulty = [10, 15, 20];
 
@@ -26,6 +27,8 @@ class minesweeper {
         this.fMine = true;
     }
 
+
+    //for setting the number of flags
     rNumies() {
         return this.fElements;
     }
@@ -60,6 +63,7 @@ class minesweeper {
 
     };
 
+    //Counts the mines sourounding the specific cell digged
     mineDigger = (index) => {
         if (this.cells[index].dataset.mine == 1 || this.cells[index].dataset.digged == 1 || this.cells[index].dataset.marked == 1) { return; }
         this.cells[index].dataset.digged = 1;
@@ -113,6 +117,8 @@ class minesweeper {
         this.image(index);
     }
 
+
+    //This one is for the change of src (Is easier to manage as a separate function)
     image = (index) => {
         if (this.cells[index].dataset.mine == 1) { return; }
         if (this.cells[index].dataset.mineNumber == 0) {
@@ -146,7 +152,7 @@ class minesweeper {
     }
 
 
-    //Need to fix the cycle
+    //Check the cycle
     clickHandle = (index) => {
         this.mineStep = false;
         if (this.isGameOver || this.cells[index].dataset.digged == 1) return;
@@ -181,7 +187,6 @@ class minesweeper {
                 this.bCalculeE = (((index + 1) / this.dificulty[this.dChosen]) * 10);
                 this.mineDigger(index);
 
-                //I know this can be done with a loop. But the loops are crashing the html, whihc is why I cannot use it.
                 if (this.bCalcule % 10 != 0) {
                     if (index - 1 >= 0) { this.mineDigger(index - 1); }
                     if (index >= this.dificulty[this.dChosen] + 1) { this.mineDigger(index - (this.dificulty[this.dChosen] + 1)); }
@@ -200,6 +205,8 @@ class minesweeper {
         }
     }
 
+
+    //This is for checking if the player lost or won and tells it into the 
     checkGame = () => {
 
         if (this.mineStep) {

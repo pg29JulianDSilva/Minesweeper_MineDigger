@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app.Js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\Index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\modules\\Board.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\Board.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
@@ -21,6 +17,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\Index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,20 +34,20 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "style.css",
               "DocumentMoniker": "D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\style.css",
               "RelativeDocumentMoniker": "style.css",
               "ToolTip": "D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\style.css",
               "RelativeToolTip": "style.css",
-              "ViewState": "AgIAAJEAAAAAAAAAAAApwKAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAANYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-10-25T23:01:10.036Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Index.html",
               "DocumentMoniker": "D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\Index.html",
               "RelativeDocumentMoniker": "Index.html",
@@ -55,8 +55,7 @@
               "RelativeToolTip": "Index.html",
               "ViewState": "AgIAADMAAAAAAAAAAAAAAD0AAABoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-25T05:31:00.58Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-25T05:31:00.58Z"
             },
             {
               "$type": "Document",
@@ -66,33 +65,33 @@
               "RelativeDocumentMoniker": "app.Js",
               "ToolTip": "D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\app.Js",
               "RelativeToolTip": "app.Js",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAuwI4AAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAH4AAAAAAAAAAAA7wJIAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-10-24T04:39:41.564Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "gameLogic.js",
               "DocumentMoniker": "D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\libraries\\gameLogic.js",
               "RelativeDocumentMoniker": "libraries\\gameLogic.js",
               "ToolTip": "D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\libraries\\gameLogic.js",
               "RelativeToolTip": "libraries\\gameLogic.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-10-24T04:39:48.143Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Board.js",
               "DocumentMoniker": "D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\modules\\Board.js",
               "RelativeDocumentMoniker": "modules\\Board.js",
               "ToolTip": "D:\\Projectos VFS\\HTML\\A3\\Minesweeper_MineDigger-Advance0.2\\Minesweeper_MineDigger-Advance0.2\\modules\\Board.js",
               "RelativeToolTip": "modules\\Board.js",
-              "ViewState": "AgIAAL4AAAAAAAAAAAAQwIIAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAQwHQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-10-24T04:39:46.196Z",
               "EditorCaption": ""

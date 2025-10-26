@@ -20,32 +20,34 @@ let Hgame = document.querySelector('#HCave');
 
 let dChosen = 2;
 
+//Easy
 function easygame()  {
     EGame.style.display = "block";
     MGame.style.display = "none";
     HGame.style.display = "none";
     dChosen = 0;
-    //console.log("dChosen" + dChosen);
     Redo();
 }
+
+//Medium
 function mediumgame()  {
     EGame.style.display = "none";
     MGame.style.display = "block";
     HGame.style.display = "none";
-    //console.log("dChosen" + dChosen);
     dChosen = 1;
     Redo();
 }
+
+//Hard
 function hardgame()  {
     EGame.style.display = "none";
     MGame.style.display = "none";
     HGame.style.display = "block";
     dChosen = 2;
-    //console.log("dChosen" + dChosen);
     Redo();
 }
 
-//Button functions
+//Button functions for change difficulty
 
 Ebutton.addEventListener("click", easygame);
 Mbutton.addEventListener("click", mediumgame);
@@ -55,24 +57,26 @@ Hbutton.addEventListener("click", hardgame);
 
 //Elements
 
-//This is a mark for the dificulties,
-
 
 //User Data Records
 let mTime = document.querySelectorAll('.Timer');
 let mFlags = document.querySelectorAll('.Flags');
 
+//for the user register if win
 let TagName;
 
+//For the restart button IMG
 let mFace = document.querySelectorAll('.Happy');
 
-//for the time
+//for the time actual board
 let d = new GameEngine(Egame, Mgame, Hgame, dChosen);
+
+//For the timer;
 let lTimer = setInterval(timer, 1000);
-//This one will need later the clearinterval(lTimer)
 let gSeconds = 0;
 let gMinutes = 0
 
+//Function for the time
 function timer(){
     gSeconds++;
     if (gSeconds >= 60) {
@@ -84,13 +88,10 @@ function timer(){
 
 }
 
-
-
-//Button difficulty functions
-
 //Restart Game
 let RestartButton = document.querySelectorAll('.ReStart');
 
+//This reset the default vales and called a new board
 function Redo() {
     clearInterval(lTimer);
     gSeconds = 0;
@@ -101,9 +102,9 @@ function Redo() {
     mFace[dChosen].src = "Assets/faceH.png";
     return;
 };
-//For the score managing
 
 
+//For the TOP inside the ranks for the final part
 let pName = [];
 let pTime = [];
 
@@ -121,7 +122,7 @@ pTime[2] = document.querySelector('#time_3');
 pTime[3] = document.querySelector('#time_4');
 pTime[4] = document.querySelector('#time_5');
 
-//Function to start
+//Function if the player win
 
 function checkEndGame() {
 
@@ -143,23 +144,19 @@ function checkEndGame() {
                 }
                 pTime[i].textContent = gMinutes + ":" + gSeconds;
                 pName[i].textContent = TagName;
-                
+                break;
             }
         }
 
     }
 }
-for (let i = 0; i < 5; i++) {
-    (console.log((Number(pTime[i].textContent.slice(0, 1)) * 60) + Number(pTime[i].textContent.slice(2, 3))));
-    console.log(pTime[i].textContent.slice(2, 3));
-    console.log(i);
-}
-//Final codes
+
+//Restart buttons
 
 RestartButton[0].addEventListener("click", Redo);
 RestartButton[1].addEventListener("click", Redo);
 RestartButton[2].addEventListener("click", Redo);
 
+//Final codes to establish the begginig
 Redo();
-
 lTimer;
